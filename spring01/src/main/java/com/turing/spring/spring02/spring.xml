@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 往Spring容器中，配置一个Bean -->
+    <!-- 针式打印机 -->
+    <bean id="pinPrinter"  class="com.turing.spring.spring02.PinPrinter"></bean>
+    <!-- 激光打印机 -->
+    <bean id="laserPrinter"  class="com.turing.spring.spring02.LaserPrinter"></bean>
+    <!-- 图文店 -->
+    <bean id="printHouse" class="com.turing.spring.spring02.PrintHouse">
+    	<!-- 构造器注入，ref表示引用 -->
+    	<!-- <constructor-arg ref="pinPrinter"></constructor-arg> -->
+    	
+    	<!-- set注入，ref表示引用 -->
+    	<property name="printer" ref="pinPrinter"></property>
+    </bean>
+
+</beans>
